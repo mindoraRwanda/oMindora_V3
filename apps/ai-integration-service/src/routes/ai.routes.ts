@@ -79,7 +79,7 @@ router.post(
       // receive a 500 error instead of the crisis helpline message — the worst possible
       // failure mode for this code path. The .catch ensures the error is logged without
       // propagating to the response flow.
-      let interactionId = randomUUID();
+      let interactionId: string = randomUUID();
       const crisisSessionId = resolvedSessionId ?? randomUUID();
       const approvedClinicalResources =
         process.env.CRISIS_CONTACTS_APPROVED === 'true'
